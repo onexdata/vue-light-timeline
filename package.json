@@ -1,7 +1,7 @@
 {
-  "name": "vue-light-timeline",
-  "version": "0.12.8",
-  "description": "A lightweight vue timeline components",
+  "name": "vue-simple-timeline",
+  "version": "0.1.0",
+  "description": "A simple vue timeline component",
   "main": "index.js",
   "scripts": {
     "lint": "eslint --ext .js src example build",
@@ -13,7 +13,7 @@
   "keywords": [
     "timeline",
     "vue-timeline",
-    "vue-light-timeline",
+    "vue-simple-timeline",
     "vue-moe-timeline",
     "light timeline",
     "timeline components",
@@ -21,13 +21,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SME-FE/vue-light-timeline"
+    "url": "git+https://github.com/onexdata/vue-simple-timeline"
   },
   "bugs": {
-    "url": "https://github.com/SME-FE/vue-light-timeline/issues"
+    "url": "https://github.com/onexdata/vue-simple-timeline/issues"
   },
-  "homepage": "https://github.com/SME-FE/vue-light-timeline",
-  "author": "hwen <hwenleung@gmail.com>",
+  "homepage": "https://github.com/onexdata/vue-simple-timeline",
+  "author": "hwen <hwenleung@gmail.com>, nick steele <njsteele@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.0",

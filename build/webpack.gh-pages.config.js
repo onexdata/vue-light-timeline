@@ -7,7 +7,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 module.exports = merge(example, {
   devtool: 'none',
   output: {
-    publicPath: '/vue-light-timeline/'
+    publicPath: '/vue-simple-timeline/'
   },
   module: {
     rules: [

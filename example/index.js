@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import LightTimeline from '@/index.js'
+import SimpleTimeline from '@/index.js'
 
 import App from './components/App.vue'
 import routes from './routes'
@@ -8,7 +8,7 @@ import routes from './routes'
 import './normalize.css'
 
 Vue.use(VueRouter)
-Vue.use(LightTimeline)
+Vue.use(SimpleTimeline)
 
 const router = new VueRouter({
   routes

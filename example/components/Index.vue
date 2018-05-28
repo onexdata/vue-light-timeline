@@ -1,7 +1,7 @@
 <template lang="pug">
 .test
   .test-header
-  light-timeline(:items='items')
+  simple-timeline(:items='items')
 </template>
 
 <script>
@@ -12,7 +12,7 @@ export default {
         {
           tag: '2010年1月',
           color: 'yellow',
-          content: '在国际乒联巡回赛总决赛中，许昕2-4不敌马龙，获得男单亚军。'
+          content: 'This is a test <b>hello</b>'
         },
         {
           tag: '2011年1月',

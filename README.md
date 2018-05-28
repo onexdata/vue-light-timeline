@@ -1,5 +1,5 @@
 
-## vue-light-timeline
+## vue-simple-timeline
 
 A lightweight timeline components for vue2
 
@@ -11,27 +11,27 @@ A lightweight timeline components for vue2
 ## install
 
 ```shell
-yarn add vue-light-timeline
+yarn add vue-simple-timeline
 ```
 
 if you prefer npm:
 
 ```shell
-npm i vue-light-timeline
+npm i vue-simple-timeline
 ```
 
 ## usage
 
 ```js
 import Vue from 'vue';
-import LightTimeline from 'vue-light-timeline';
+import SimpleTimeline from 'vue-simple-timeline';
 
-Vue.use(LightTimeline);
+Vue.use(SimpleTimeline);
 ```
 
 ```html
 <template>
-  <light-timeline :items='items'></light-timeline>
+  <simple-timeline :items='items'></simple-timeline>
 </template>
 <script>
 export default {

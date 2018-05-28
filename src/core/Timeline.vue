@@ -12,13 +12,12 @@ ul.line-container
       :path-style='getStyle(item)'
     )
     .item-tag {{item.tag}}
-    .item-content(:class='item.type')
-      | {{item.content}}
+    .item-content(:class='item.type' v-html="item.content")
 </template>
 <script>
 import Star from '../base/star.vue'
 export default {
-  name: 'light-timeline',
+  name: 'simple-timeline',
   components: { Star },
   props: {
     items: {
@@ -109,7 +108,6 @@ $colors: (
     fill: white;
   }
 }
-
 
 :root {
   --purple: $purple;
