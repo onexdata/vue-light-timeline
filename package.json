@@ -1,6 +1,6 @@
 {
   "name": "vue-simple-timeline",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A simple vue timeline component",
   "main": "index.js",
   "scripts": {
@@ -66,5 +66,6 @@
   },
   "peerDependencies": {
     "vue": "^2.1.8"
-  }
+  },
+  "dependencies": {}
 }
