@@ -40,7 +40,8 @@ export default {
       items: [
         {
           tag: '2018-01-12',
-          content: 'hallo'
+          content: 'Hello. You can use <b>FULL</b> HTML here, be sure to sanitize<br/>if you are using user input!',
+          footer: 'Stuff you want to appear in the footer'
         },
         {
           tag: '2018-01-13',

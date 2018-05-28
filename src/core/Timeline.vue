@@ -12,7 +12,15 @@ ul.line-container
       :path-style='getStyle(item)'
     )
     .item-tag {{item.tag}}
+    .item-title(
+      v-if="item.title"
+      v-html="item.title"
+    )
     .item-content(:class='item.type' v-html="item.content")
+    .item-footer( :class='footerPos'
+      v-if="item.footer"
+      v-html="item.footer"
+    )
 </template>
 <script>
 import Star from '../base/star.vue'
@@ -22,12 +30,24 @@ export default {
   props: {
     items: {
       type: Array
+    },
+    footer: {
+      type: String
     }
   },
   data () {
     return {
-      presetReg: /purple|orange|yellow/
+      presetReg: /blue|grey|dark-grey|purple|orange|yellow/
     }
+  },
+  computed: {
+    footerPos () {
+      var footerPos = this.footer || 'left'
+      return 'item-footer-' + footerPos
+    }
+  },
+  mounted () {
+    console.log('footer pos:', this.footerPos)
   },
   methods: {
     getColorClass (color) {
@@ -59,6 +79,9 @@ $tag-family: Consolas, Menlo, Courier, monospace;
 $purple: #8b80f9;
 $orange: #ed9153;
 $yellow: #fbd157;
+$blue: #2196F3;
+$grey: #ccc;
+$dark-grey: #777;
 $font-color: #606c76;
 $font-size: 14px;
 $left-pad: 5rem;
@@ -68,9 +91,12 @@ $sm-icon-size: 10px;
 $lg-icon-size: 24px;
 
 $colors: (
-  purple: $purple,
-  orange: $orange,
-  yellow: $yellow
+  purple  : $purple,
+  orange  : $orange,
+  yellow  : $yellow,
+  grey    : $grey,
+  blue: $blue,
+  dark-grey : $dark-grey
 );
 
 @mixin square($val) {
@@ -111,6 +137,9 @@ $colors: (
 
 :root {
   --purple: $purple;
+  --grey: $grey;
+  --dark-grey: $dark-grey;
+  --blue: $blue;
   --orange: $orange;
   --yellow: $yellow;
 }
@@ -129,9 +158,9 @@ $colors: (
     content: "";
     left: $left-pad;
     top: 0;
-    width: 1px;
+    width: 2px;
     height: 100%;
-    background-color: lighten($purple, 20%);
+    background-color: lighten($blue, 20%);
   }
 
   .line-item {
@@ -139,7 +168,7 @@ $colors: (
     position: relative;
   }
   .item-circle {
-    @include make-circle($icon-size, $purple);
+    @include make-circle($icon-size, $grey);
     @each $key, $val in $colors {
       &.#{$key} {
         border: 2px solid $val;
@@ -147,7 +176,7 @@ $colors: (
     }
   }
   .item-star {
-    @include make-star($lg-icon-size, $purple);
+    @include make-star($lg-icon-size, $grey);
     @each $key, $val in $colors {
       &.#{$key} {
         path {
@@ -170,6 +199,17 @@ $colors: (
       font-weight: bold;
       font-size: $font-size * 1.1;
     }
+  }
+  .item-title {
+    padding-bottom: 10px;
+    font-size: 120%;
+    font-weight: bold;
+  }
+  .item-footer {
+    padding-top: 10px;
+  }
+  .item-footer-right {
+    text-align: right;
   }
 }
 </style>

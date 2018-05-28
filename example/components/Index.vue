@@ -1,7 +1,7 @@
 <template lang="pug">
 .test
   .test-header
-  simple-timeline(:items='items')
+  simple-timeline(:items='items' footer="right")
 </template>
 
 <script>
@@ -11,18 +11,23 @@ export default {
       items: [
         {
           tag: '2010年1月',
-          color: 'yellow',
-          content: 'This is a test <b>hello</b>'
+          type: 'star',
+          title: 'Item with header, right aligned footer',
+          content: 'Hello. You can use <b>FULL</b> HTML here, be sure to sanitize if you are using user input!<br/>You can of course use <font color="red">colors</font> too',
+          footer: `
+            <img class="user-img" src="https://randomuser.me/api/portraits/women/77.jpg"/>
+            <img class="user-img" src="https://randomuser.me/api/portraits/women/76.jpg"/>
+            <img class="user-img" src="https://randomuser.me/api/portraits/women/75.jpg"/>
+            <img class="user-img" src="https://randomuser.me/api/portraits/women/74.jpg"/>
+          `
         },
         {
           tag: '2011年1月',
-          type: 'circle',
-          color: 'orange',
+          color: 'blue',
           content: '在斯洛文尼亚赛公开赛中，许昕4-2战胜马琳，获得男单冠军'
         },
         {
           tag: '2011年9月',
-          type: 'circle',
           content: '在第24届亚洲杯乒乓球赛男单决赛中，许昕2-4不敌马龙，获得亚军。'
         },
         {
@@ -58,6 +63,12 @@ export default {
 }
 </script>
 <style lang="scss">
+.user-img {
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+
 .test-header {
   background: url('./../assets/xuxin.jpg');
   background-size: cover;
