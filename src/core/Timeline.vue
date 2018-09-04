@@ -46,9 +46,6 @@ export default {
       return 'item-footer-' + footerPos
     }
   },
-  mounted () {
-    console.log('footer pos:', this.footerPos)
-  },
   methods: {
     getColorClass (color) {
       return this.presetReg.test(color) ? color : ''
